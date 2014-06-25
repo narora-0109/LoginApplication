@@ -1,4 +1,5 @@
 <%= form_for(@user, html: { class: "half-width" }) do |f| %>
+  <%= render partial: "shared/notice" %>
   <%= render partial: "shared/error_messages", locals: { model: @user } %>
 
   <div class="field">
