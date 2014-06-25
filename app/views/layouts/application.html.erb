@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>LoginApplication</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <title>NewApp</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
-
-<%= yield %>
-
+<body role="document">
+  <%= render partial: "shared/navigation" %>
+  <div class="container theme-showcase" role="main">  
+    <div class="jumbotron">
+      <%= yield %>
+    </div>
+    <%= render partial: "shared/footer" %>
+  </div>
 </body>
 </html>

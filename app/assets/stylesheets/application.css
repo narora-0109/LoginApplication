@@ -9,5 +9,23 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
+ *= require bootstrap
  *= require_tree .
  */
+
+body { padding-top: 70px; }
+
+table.records td { padding:10px }
+table.records th { padding:10px }
+
+.light-gray { background-color:#F5F5F5 }
+.dark-gray { background-color:#F2F1F0 }
+
+.half-width { width:50% }
+
+.right { float:right }
+.left { float:left }
+.clearer { clear:both }
+
+.field { margin-top:15px }
+.error_field { margin:0px; padding:0px; }
