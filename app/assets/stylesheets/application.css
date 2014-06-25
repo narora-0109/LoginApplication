@@ -15,6 +15,11 @@
 
 body { padding-top: 70px; }
 
+a.white:link { color:#FFFFFF !important }      /* unvisited link */
+a.white:visited { color:#FFFFFF !important}  /* visited link */
+a.white:hover { color:#FFFFFF !important}  /* mouse over link */
+a.white:active { color:#FFFFFF !important}  /* selected link */ 
+
 table.records td { padding:10px }
 table.records th { padding:10px }
 
