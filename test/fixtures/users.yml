@@ -5,13 +5,13 @@ one:
   password_digest: <%= BCrypt::Password.create('secret') %>
   surname: MyString
   firstname: MyString
-  email: MyString
+  email: one@test.com
   admin: false
 
 two:
-  username: MyString
+  username: MyStringTwo
   password_digest: <%= BCrypt::Password.create('secret') %>
   surname: MyString
   firstname: MyString
-  email: MyString
+  email: two@test.com
   admin: false

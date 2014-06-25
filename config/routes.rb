@@ -1,4 +1,15 @@
 LoginApplication::Application.routes.draw do
+  
+  root 'sessions#new'
+
+  get "admin" => "admin#index"
+
+  controller :sessions do
+    get 'login' => :new
+    post 'login' => :create
+    delete 'logout' => :destroy
+  end
+
   resources :users, except: [:show]
 
   # The priority is based upon order of creation: first created -> highest priority.
