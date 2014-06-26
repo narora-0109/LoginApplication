@@ -15,4 +15,8 @@ class ApplicationController < ActionController::Base
   	def authorize
   		redirect_to login_url, notice: "Please log in" unless @current_user
   	end
+  	
+  	def redirect_if_not_admin
+      redirect_to admin_path, notice: "This action ist not allowed" unless @current_user.admin
+    end
 end

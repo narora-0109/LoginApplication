@@ -10,7 +10,7 @@ class UsersControllerTest < ActionController::TestCase
                     surname: 'User',
                     firstname: 'Valid',
                     email: 'valid@user.de',
-                    admin: false }
+                    admin: true }
   end
 
   test "should get index" do

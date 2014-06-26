@@ -2,7 +2,7 @@ LoginApplication::Application.routes.draw do
   
   root 'sessions#new'
 
-  get "admin" => "admin#index"
+  get 'admin' => 'admin#index'
 
   controller :sessions do
     get 'login' => :new

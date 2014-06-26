@@ -26,13 +26,15 @@
     <%= f.label :email %>
     <%= f.text_field :email, class: "form-control" %>
   </div>
-  <div class="field">
-    <%= f.label :admin %>
-    <%= f.check_box :admin %>
-  </div>
-  <div class="left">
-    <%= link_to "Back", :back, class: "btn btn-default left" %>
-  </div>
+  <% if @current_user.admin %>
+    <div class="field">
+      <%= f.label :admin %>
+      <%= f.check_box :admin %>
+    </div>
+    <div class="left">
+      <%= link_to "Back", :back, class: "btn btn-default left" %>
+    </div>
+  <% end %>
   <div class="right">
     <%= f.submit "Save", class: "btn btn-primary white right"%>
   </div>

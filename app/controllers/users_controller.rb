@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :redirect_if_not_admin, except: [:edit, :update]
+  before_action :redirect_if_not_allowed, only: [:edit, :update]
 
   # GET /users
   def index
@@ -41,9 +43,12 @@ class UsersController < ApplicationController
 
   # DELETE /users/1
   def destroy
-    @user.destroy
     respond_to do |format|
-      format.html { redirect_to users_url, notice: 'User was successfully deleted.' }
+      if @user.destroy 
+        format.html { redirect_to users_url, notice: 'User was successfully deleted.' }
+      else
+        format.html { redirect_to users_url, alert: 'User could not be deleted.'}
+      end
     end
   end
 
@@ -55,6 +60,10 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:username, :password, :password_confirmation, :surname, :firstname, :email, :admin)
+      params.require(:user).permit(:username, :password, :password_confirmation, :surname, :firstname, :email, (:admin if @current_user.admin))
+    end
+    
+    def redirect_if_not_allowed
+      redirect_to admin_path, notice: "This action ist not allowed" if @current_user != @user && !@current_user.admin
     end
 end
