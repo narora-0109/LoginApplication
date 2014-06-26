@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
   validates :surname, presence: true
   validates :firstname, presence: true
   validates :email, presence: true, uniqueness: true, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i }
-  validate :last_admin?, unless: 'admin'
+  validate :last_admin?, unless: 'new_record? || admin'
   
   before_destroy :destroyable?
   
