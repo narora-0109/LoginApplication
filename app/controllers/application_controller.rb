@@ -17,6 +17,6 @@ class ApplicationController < ActionController::Base
   	end
   	
   	def redirect_if_not_admin
-      redirect_to admin_path, notice: "This action ist not allowed" unless @current_user.admin
+      redirect_to home_url, notice: "This action ist not allowed" unless @current_user.admin
     end
 end

@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class AdminControllerTest < ActionController::TestCase
+class HomeControllerTest < ActionController::TestCase
   test "should get index" do
   	session[:user_id] = users(:one)
     get :index
