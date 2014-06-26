@@ -7,6 +7,7 @@
         <th>ID</th>
         <th>Username</th>
         <th>Name</th>
+        <th>E-mail</th>
         <th colspan="3"></th>
       </tr>
     </thead>
@@ -14,8 +15,9 @@
       <% @users.each do |user| %>
         <tr>
           <td><%= user.id %></td>
-          <td><%= user.email %></td>
+          <td><%= user.username %></td>
           <td><%= user.full_name %></td>
+          <td><%= user.email %></td>
           <td><%= link_to 'Edit', edit_user_path(user), class: "btn btn-primary btn-xs white" %></td>
           <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger btn-xs white" if user.destroyable? %></td>
         </tr>
