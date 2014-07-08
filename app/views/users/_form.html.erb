@@ -31,12 +31,8 @@
       <%= f.label :admin %>
       <%= f.check_box :admin %>
     </div>
-    <div class="left">
-      <%= link_to "Back", :back, class: "btn btn-default left" %>
-    </div>
+    <%= link_to "Back", :back, class: "btn btn-default left" %>
   <% end %>
-  <div class="right">
-    <%= f.submit "Save", class: "btn btn-primary white right"%>
-  </div>
+  <%= f.submit "Save", class: "btn btn-primary white right"%>
   <div class="clearer"></div>
 <% end %>
