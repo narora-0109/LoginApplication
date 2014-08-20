@@ -64,6 +64,6 @@ class UsersController < ApplicationController
     end
     
     def redirect_if_not_allowed
-      redirect_to home_url, notice: "This action ist not allowed" if @current_user != @user && !@current_user.admin
+      redirect_to home_url, alert: "This action ist not allowed" if @current_user != @user && !@current_user.admin
     end
 end
