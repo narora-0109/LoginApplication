@@ -6,11 +6,17 @@ class SessionsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
+  test "should not get new" do 
+    session[:user_id] = users(:one).id
+    get :new
+    assert_redirected_to home_path
+  end
+
   test "should login" do
-    usr = users(:one)
-    post :create, username: usr.username, password: 'secret'
+    user = users(:one)
+    post :create, username: user.username, password: 'secret'
     assert_redirected_to home_url
-    assert_equal usr.id, session[:user_id]
+    assert_equal user.id, session[:user_id]
   end
 
   test "should fail login" do
@@ -23,5 +29,4 @@ class SessionsControllerTest < ActionController::TestCase
     delete :destroy
     assert_redirected_to login_url
   end
-
 end

@@ -7,4 +7,9 @@ class HomeControllerTest < ActionController::TestCase
     assert_response :success
   end
 
+  test "should not get index" do 
+    session[:user_id] = nil
+    get :index
+    assert_redirected_to login_path
+  end
 end

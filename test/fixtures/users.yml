@@ -14,4 +14,4 @@ two:
   surname: MyString
   firstname: MyString
   email: two@test.com
-  admin: true
+  admin: false
